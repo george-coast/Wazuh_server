@@ -1,0 +1,26 @@
+Traceback (most recent call last):
+  File "/usr/local/bin/linode-cli", line 8, in <module>
+    sys.exit(main())
+  File "/usr/local/lib/python3.10/dist-packages/linodecli/__init__.py", line 210, in main
+    plugins.invoke(parsed.command, plugin_args, context)
+  File "/usr/local/lib/python3.10/dist-packages/linodecli/plugins/plugins.py", line 145, in invoke
+    plugin.call(args, context)
+  File "/usr/local/lib/python3.10/dist-packages/linodecli/plugins/obj/__init__.py", line 412, in call
+    COMMAND_MAP[parsed.command](
+  File "/usr/local/lib/python3.10/dist-packages/linodecli/plugins/obj/list.py", line 51, in list_objects_or_buckets
+    client = get_client()
+  File "/usr/local/lib/python3.10/dist-packages/linodecli/plugins/obj/__init__.py", line 408, in get_client
+    return _get_boto_client(current_cluster, access_key, secret_key)
+  File "/usr/local/lib/python3.10/dist-packages/linodecli/plugins/obj/__init__.py", line 434, in _get_boto_client
+    client = boto3.client(
+  File "/usr/local/lib/python3.10/dist-packages/boto3/__init__.py", line 92, in client
+    return _get_default_session().client(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/boto3/session.py", line 297, in client
+    return self._session.create_client(
+  File "/usr/local/lib/python3.10/dist-packages/botocore/session.py", line 924, in create_client
+    region_name = self._resolve_region_name(region_name, config)
+  File "/usr/local/lib/python3.10/dist-packages/botocore/session.py", line 1023, in _resolve_region_name
+    validate_region_name(region_name)
+  File "/usr/local/lib/python3.10/dist-packages/botocore/utils.py", line 1318, in validate_region_name
+    raise InvalidRegionError(region_name=region_name)
+botocore.exceptions.InvalidRegionError: Provided region_name 'new5571.us-east-1.linodeobjects.com' doesn't match a supported format.
